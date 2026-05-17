@@ -58,28 +58,24 @@ public class MainActivity extends AppCompatActivity {
         int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.grid_spacing);
         rvBooks.addItemDecoration(new GridSpacingItemDecoration(2, spacingInPixels, true));
 
-        // Khởi tạo Adapter ở đây để tránh lỗi NullPointerException khi gọi filterBooks/loadBooks
         setupAdapter();
         loadBooks();
 
         SearchView searchView = findViewById(R.id.searchView);
-        // --- THAY ĐỔI LOGIC TÌM KIẾM Ở ĐÂY ---
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                // Khi người dùng nhấn Enter hoặc nút tìm kiếm
                 if (query != null && !query.trim().isEmpty()) {
                     Intent intent = new Intent(MainActivity.this, SearchResultsActivity.class);
-                    intent.putExtra("SEARCH_QUERY", query); // Gửi từ khóa tìm kiếm
+                    intent.putExtra("SEARCH_QUERY", query);
                     startActivity(intent);
                 }
-                searchView.clearFocus(); // Ẩn bàn phím
+                searchView.clearFocus();
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                // Không làm gì khi người dùng đang gõ
                 return false;
             }
         });
@@ -103,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.nav_orders) {
-                    Intent intent = new Intent(MainActivity.this, OrdersActivity.class);
+                    // Chuyển hướng sang màn hình Đơn hàng của User
+                    Intent intent = new Intent(MainActivity.this, UserOrdersActivity.class);
                     intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME"));
                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(intent);
@@ -121,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupAdapter() {
-        // Khởi tạo Adapter với một listener trống hoặc có chức năng mặc định (ví dụ: xem chi tiết)
         adapter = new BookAdapter(this, bookList, new BookAdapter.OnBookClickListener() {
             @Override
             public void onBookClick(Book book) {
@@ -156,9 +152,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    // ============================================================
-    // TÍNH NĂNG MỚI: Hỏi AI khi bấm vào sách
-    // ============================================================
     private void showAiDialog(Book book) {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_book_ai);
@@ -184,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
             dialog.dismiss();
         });
 
-        // Tạo prompt gửi AI
         String prompt = "Bạn là trợ lý tư vấn sách. Hãy trả lời NGẮN GỌN bằng tiếng Việt (tối đa 120 từ) về cuốn sách sau:\n\n"
                 + "Tên: " + book.getTitle() + "\n"
                 + "Tác giả: " + book.getAuthor() + "\n"
@@ -193,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
                 + "Giá: " + String.format("%,.0f đ", book.getPrice()) + "\n\n"
                 + "Hãy cho biết: 1) Sách này phù hợp với ai? 2) Có nên mua không? Dùng emoji cho sinh động.";
 
-        // Gọi AI
         AiHelper.ask(prompt, new AiHelper.Callback() {
             @Override
             public void onResult(String result) {
@@ -211,19 +202,4 @@ public class MainActivity extends AppCompatActivity {
 
         dialog.show();
     }
-    // ============================================================
-
-//    private void filterBooks(String query) {
-//        bookList.clear();
-//        if (query.isEmpty()) {
-//            bookList.addAll(fullBookList);
-//        } else {
-//            for (Book book : fullBookList) {
-//                if (book.getTitle().toLowerCase().contains(query.toLowerCase())) {
-//                    bookList.add(book);
-//                }
-//            }
-//        }
-//        adapter.notifyDataSetChanged();
-//    }
 }

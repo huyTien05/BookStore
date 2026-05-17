@@ -50,6 +50,7 @@
         <activity android:name="com.example.bookapp.activities.RegisterActivity" />
         <activity android:name="com.example.bookapp.activities.UsersManagementActivity" />
         <activity android:name="com.example.bookapp.activities.OrdersActivity" />
+        <activity android:name="com.example.bookapp.activities.UserOrdersActivity" />
         <activity android:name="com.example.bookapp.activities.CartActivity" />
 
         <provider

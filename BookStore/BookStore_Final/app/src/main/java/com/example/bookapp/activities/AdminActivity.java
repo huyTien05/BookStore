@@ -2,10 +2,6 @@ package com.example.bookapp.activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-
-import android.content.DialogInterface;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -33,7 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdminActivity extends AppCompatActivity {
-// hehehehhehehehehehhe hohohoh
     private RecyclerView rvBooks;
     private BookAdapter adapter;
     private List<Book> bookList = new ArrayList<>();
@@ -52,7 +46,6 @@ public class AdminActivity extends AppCompatActivity {
         userDAO = new UserDAO(this);
         orderDAO = new OrderDAO(this);
 
-        // Init views
         tvTotalBooks = findViewById(R.id.tvTotalBooks);
         tvTotalUsers = findViewById(R.id.tvTotalUsers);
         tvTotalOrders = findViewById(R.id.tvTotalOrders);
@@ -60,7 +53,6 @@ public class AdminActivity extends AppCompatActivity {
         rvBooks = findViewById(R.id.rvBooks);
         rvBooks.setLayoutManager(new GridLayoutManager(this, 2));
 
-        // KHỞI TẠO ADAPTER MỚI VÀ XỬ LÝ CLICK TẠI ĐÂY
         adapter = new BookAdapter(this, bookList, new BookAdapter.OnBookClickListener() {
             @Override
             public void onBookClick(Book book) {
@@ -69,7 +61,6 @@ public class AdminActivity extends AppCompatActivity {
 
             @Override
             public void onAddToCartClick(Book book) {
-                // Admin không cần chức năng này
                 Toast.makeText(AdminActivity.this, "Chế độ Admin: Không thể thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
             }
         });
@@ -78,7 +69,6 @@ public class AdminActivity extends AppCompatActivity {
 
         loadStatistics();
         loadBooks();
-
 
         SearchView searchView = findViewById(R.id.searchView);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -99,25 +89,22 @@ public class AdminActivity extends AppCompatActivity {
         fabAddBook.setOnClickListener(v -> showAddBookDialog());
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.nav_books); // Thêm dòng này để chọn đúng tab
+        bottomNavigationView.setSelectedItemId(R.id.nav_books);
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.nav_books) {
                 loadBooks();
                 return true;
             } else if (itemId == R.id.nav_users) {
-                Intent intent = new Intent(AdminActivity.this, UsersManagementActivity.class);
-                startActivity(intent);
-                finish(); // Thêm finish() để tránh Activity chồng chéo
+                startActivity(new Intent(AdminActivity.this, UsersManagementActivity.class));
                 return true;
             } else if (itemId == R.id.nav_orders) {
-                Intent intent = new Intent(AdminActivity.this, OrdersActivity.class);
-                startActivity(intent);
-                finish(); // Thêm finish()
+                // Điều hướng tới màn hình đơn hàng Admin
+                startActivity(new Intent(AdminActivity.this, OrdersActivity.class));
                 return true;
             } else if (itemId == R.id.nav_profile) {
                 Intent intent = new Intent(AdminActivity.this, ProfileActivity.class);
-                intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME")); // Truyền username
+                intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME"));
                 startActivity(intent);
                 return true;
             }
@@ -138,9 +125,6 @@ public class AdminActivity extends AppCompatActivity {
         bookList.addAll(bookDAO.getAllBooks());
         fullBookList.addAll(bookList);
         adapter.notifyDataSetChanged();
-        if (bookList.isEmpty()) {
-            Toast.makeText(this, "Chưa có sách nào", Toast.LENGTH_SHORT).show();
-        }
     }
 
     private void filterBooks(String query) {
@@ -158,41 +142,36 @@ public class AdminActivity extends AppCompatActivity {
     }
 
     private void showAddBookDialog() {
-        try {
-            Dialog dialog = new Dialog(this);
-            dialog.setContentView(R.layout.dialog_add_edit_book);
-            dialog.setTitle("Thêm sách");
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_add_edit_book);
+        dialog.setTitle("Thêm sách");
 
-            EditText etTitle = dialog.findViewById(R.id.etTitle);
-            EditText etAuthor = dialog.findViewById(R.id.etAuthor);
-            EditText etCategory = dialog.findViewById(R.id.etCategory);
-            EditText etDescription = dialog.findViewById(R.id.etDescription);
-            EditText etPrice = dialog.findViewById(R.id.etPrice);
-            EditText etStock = dialog.findViewById(R.id.etStock);
-            EditText etImage = dialog.findViewById(R.id.etImage);
-            Button btnSave = dialog.findViewById(R.id.btnSave);
+        EditText etTitle = dialog.findViewById(R.id.etTitle);
+        EditText etAuthor = dialog.findViewById(R.id.etAuthor);
+        EditText etCategory = dialog.findViewById(R.id.etCategory);
+        EditText etDescription = dialog.findViewById(R.id.etDescription);
+        EditText etPrice = dialog.findViewById(R.id.etPrice);
+        EditText etStock = dialog.findViewById(R.id.etStock);
+        EditText etImage = dialog.findViewById(R.id.etImage);
+        Button btnSave = dialog.findViewById(R.id.btnSave);
 
-            btnSave.setOnClickListener(v -> {
-                if (validateInputs(etTitle, etAuthor, etPrice, etStock)) {
-                    Book newBook = new Book(0, etTitle.getText().toString(), etAuthor.getText().toString(),
-                            etCategory.getText().toString(), etDescription.getText().toString(),
-                            Double.parseDouble(etPrice.getText().toString()),
-                            Integer.parseInt(etStock.getText().toString()), etImage.getText().toString());
-                    bookDAO.insertBook(newBook);
-                    Toast.makeText(this, "Thêm sách thành công", Toast.LENGTH_SHORT).show();
-                    loadBooks();
-                    loadStatistics();
-                    dialog.dismiss();
-                }
-            });
+        btnSave.setOnClickListener(v -> {
+            if (validateInputs(etTitle, etAuthor, etPrice, etStock)) {
+                Book newBook = new Book(0, etTitle.getText().toString(), etAuthor.getText().toString(),
+                        etCategory.getText().toString(), etDescription.getText().toString(),
+                        Double.parseDouble(etPrice.getText().toString()),
+                        Integer.parseInt(etStock.getText().toString()), etImage.getText().toString());
+                bookDAO.insertBook(newBook);
+                Toast.makeText(this, "Thêm sách thành công", Toast.LENGTH_SHORT).show();
+                loadBooks();
+                loadStatistics();
+                dialog.dismiss();
+            }
+        });
 
-            dialog.show();
-        } catch (Exception e) {
-            Toast.makeText(this, "Lỗi dialog thêm sách: " + e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+        dialog.show();
     }
 
-    // Dialog edit/delete sách (Giữ nguyên)
     private void showEditDeleteDialog(Book book) {
         new AlertDialog.Builder(this)
                 .setTitle("Xác nhận")
@@ -209,47 +188,43 @@ public class AdminActivity extends AppCompatActivity {
     }
 
     private void showEditBookDialog(Book book) {
-        try {
-            Dialog dialog = new Dialog(this);
-            dialog.setContentView(R.layout.dialog_add_edit_book);
-            dialog.setTitle("Sửa sách");
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_add_edit_book);
+        dialog.setTitle("Sửa sách");
 
-            EditText etTitle = dialog.findViewById(R.id.etTitle);
-            etTitle.setText(book.getTitle());
-            EditText etAuthor = dialog.findViewById(R.id.etAuthor);
-            etAuthor.setText(book.getAuthor());
-            EditText etCategory = dialog.findViewById(R.id.etCategory);
-            etCategory.setText(book.getCategory());
-            EditText etDescription = dialog.findViewById(R.id.etDescription);
-            etDescription.setText(book.getDescription());
-            EditText etPrice = dialog.findViewById(R.id.etPrice);
-            etPrice.setText(String.valueOf(book.getPrice()));
-            EditText etStock = dialog.findViewById(R.id.etStock);
-            etStock.setText(String.valueOf(book.getStock()));
-            EditText etImage = dialog.findViewById(R.id.etImage);
-            etImage.setText(book.getImage());
-            Button btnSave = dialog.findViewById(R.id.btnSave);
+        EditText etTitle = dialog.findViewById(R.id.etTitle);
+        etTitle.setText(book.getTitle());
+        EditText etAuthor = dialog.findViewById(R.id.etAuthor);
+        etAuthor.setText(book.getAuthor());
+        EditText etCategory = dialog.findViewById(R.id.etCategory);
+        etCategory.setText(book.getCategory());
+        EditText etDescription = dialog.findViewById(R.id.etDescription);
+        etDescription.setText(book.getDescription());
+        EditText etPrice = dialog.findViewById(R.id.etPrice);
+        etPrice.setText(String.valueOf(book.getPrice()));
+        EditText etStock = dialog.findViewById(R.id.etStock);
+        etStock.setText(String.valueOf(book.getStock()));
+        EditText etImage = dialog.findViewById(R.id.etImage);
+        etImage.setText(book.getImage());
+        Button btnSave = dialog.findViewById(R.id.btnSave);
 
-            btnSave.setOnClickListener(v -> {
-                if (validateInputs(etTitle, etAuthor, etPrice, etStock)) {
-                    book.setTitle(etTitle.getText().toString());
-                    book.setAuthor(etAuthor.getText().toString());
-                    book.setCategory(etCategory.getText().toString());
-                    book.setDescription(etDescription.getText().toString());
-                    book.setPrice(Double.parseDouble(etPrice.getText().toString()));
-                    book.setStock(Integer.parseInt(etStock.getText().toString()));
-                    book.setImage(etImage.getText().toString());
-                    bookDAO.updateBook(book);
-                    Toast.makeText(this, "Sửa sách thành công", Toast.LENGTH_SHORT).show();
-                    loadBooks();
-                    dialog.dismiss();
-                }
-            });
+        btnSave.setOnClickListener(v -> {
+            if (validateInputs(etTitle, etAuthor, etPrice, etStock)) {
+                book.setTitle(etTitle.getText().toString());
+                book.setAuthor(etAuthor.getText().toString());
+                book.setCategory(etCategory.getText().toString());
+                book.setDescription(etDescription.getText().toString());
+                book.setPrice(Double.parseDouble(etPrice.getText().toString()));
+                book.setStock(Integer.parseInt(etStock.getText().toString()));
+                book.setImage(etImage.getText().toString());
+                bookDAO.updateBook(book);
+                Toast.makeText(this, "Sửa sách thành công", Toast.LENGTH_SHORT).show();
+                loadBooks();
+                dialog.dismiss();
+            }
+        });
 
-            dialog.show();
-        } catch (Exception e) {
-            Toast.makeText(this, "Lỗi dialog sửa sách: " + e.getMessage(), Toast.LENGTH_LONG).show();
-        }
+        dialog.show();
     }
 
     private boolean validateInputs(EditText... editTexts) {

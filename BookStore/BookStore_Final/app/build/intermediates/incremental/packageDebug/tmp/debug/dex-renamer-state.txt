@@ -1,12 +1,12 @@
-#Sat May 16 22:59:01 ICT 2026
-base.0=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.3=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.4=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.5=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
-base.6=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.7=C\:\\Users\\sang\\AndroidStudioProjects\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Sun May 17 22:54:48 ICT 2026
+base.0=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.3=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
+base.4=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
+base.5=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+base.6=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.7=C\:\\Users\\HP\\Documents\\GitHub\\BookStore\\BookStore\\BookStore_Final\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=13/classes.dex

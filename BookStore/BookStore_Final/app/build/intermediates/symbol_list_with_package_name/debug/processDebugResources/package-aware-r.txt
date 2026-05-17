@@ -4450,6 +4450,7 @@ layout activity_main
 layout activity_profile
 layout activity_register
 layout activity_search_results
+layout activity_user_orders
 layout activity_users_management
 layout bottom_sheet_filter
 layout custom_dialog

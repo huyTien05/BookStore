@@ -1,226 +1,226 @@
 [
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_home.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_home.png"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_button_border.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\button_border.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_book.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_book.png"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_users_management.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_users_management.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_book.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_book.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_cart.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_order_detail.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_order_detail.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_profile.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_profile.png"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_profile.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_profile.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_user.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_user.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\logo.png"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_home.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_home.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\menu_bottom_nav_admin_menu.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\menu\\bottom_nav_admin_menu.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_cart.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_cart.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_user.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_user.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_book_ai.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_book_ai.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_close.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_close.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_cart.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_cart.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_book.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_book.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_users_management.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_users_management.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_cart.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_cart.png"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_users.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_users.png"
     },
     {
-        "merged": "com.example.bookapp-debug-35:/layout_dialog_book_ai.xml.flat",
-        "source": "com.example.bookapp-main-37:/layout/dialog_book_ai.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_admin_orders.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_admin_orders.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_book.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_book.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_add_edit_book.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_add_edit_book.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\menu_profile_option_menu.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\menu\\profile_option_menu.xml"
+        "merged": "com.example.bookapp-debug-35:/layout_activity_cart.xml.flat",
+        "source": "com.example.bookapp-main-37:/layout/activity_cart.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_order_detail.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_order_detail.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_guest.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_guest.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_button_border.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\button_border.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_filter_list.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_filter_list.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_user_orders.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_user_orders.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_add_edit_user.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_add_edit_user.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.bookapp-debug-35:/layout_item_book.xml.flat",
-        "source": "com.example.bookapp-main-37:/layout/item_book.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_orders.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_orders.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_search_results.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_search_results.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_add_edit_book.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_add_edit_book.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_edit_profile.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_edit_profile.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_admin_order.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_admin_order.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_bottom_sheet_filter.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\bottom_sheet_filter.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_bottom_sheet_filter.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\bottom_sheet_filter.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_bg_bottom_sheet.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\bg_bottom_sheet.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_search_results.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_search_results.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_book_ai.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_book_ai.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_add.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_add.png"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_admin_orders.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_admin_orders.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\menu_profile_option_menu.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\menu\\profile_option_menu.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_orders.png.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_orders.png"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_search_off.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_search_off.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_guest.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_guest.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_admin.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_admin.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_logo.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\logo.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_change_password.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_change_password.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_register.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_register.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_change_password.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_change_password.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_close.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_close.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_edit_profile.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_edit_profile.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\menu_bottom_nav_admin_menu.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\menu\\bottom_nav_admin_menu.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_order_detail.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_order_detail.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_admin_order.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_admin_order.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_profile.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_profile.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_item_cart.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\item_cart.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\menu_bottom_nav_menu.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\menu\\bottom_nav_menu.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_filter_list.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_filter_list.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_cart.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_cart.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_search_off.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_search_off.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_admin.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_admin.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_order_detail.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_order_detail.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_add.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_add.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_ic_users.png.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\ic_users.png"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\drawable_bg_bottom_sheet.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\drawable\\bg_bottom_sheet.xml"
     },
     {
-        "merged": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\sang\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-debug-35:\\layout_dialog_add_edit_user.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\8.13\\com.example.bookapp-main-37:\\layout\\dialog_add_edit_user.xml"
     }
 ]
