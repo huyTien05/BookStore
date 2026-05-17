@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_options">
+        <item>Tất cả</item>
+        <item>Tiểu thuyết</item>
+        <item>Lập trình</item>
+        <item>Kinh tế</item>
+        <item>Thiếu nhi</item>
+    </string-array>
+    <string-array name="price_options">
+        <item>Tất cả</item>
+        <item>Dưới 100k</item>
+        <item>100k - 200k</item>
+        <item>Trên 200k</item>
+    </string-array>
+    <string-array name="sort_options">
+        <item>Mặc định</item>
+        <item>Giá tăng dần</item>
+        <item>Giá giảm dần</item>
+        <item>Tên (A-Z)</item>
+    </string-array>
+    <color name="active_green">#E8F5E8</color>
+    <color name="active_green_dark">#4CAF50</color>
+    <color name="black">#FF000000</color>
+    <color name="blue">#FF2196F3</color>
+    <color name="gray">#6B7780</color>
+    <color name="inactive_red">#FFEBEE</color>
+    <color name="inactive_red_dark">#F44336</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_5001">#6C63FF</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_7001">#5A52E0</color>
+    <color name="role_admin">#FFF3E0</color>
+    <color name="role_user">#E3F2FD</color>
+    <color name="status_accepted">#4CAF50</color>
+    <color name="status_completed">#2196F3</color>
+    <color name="status_default">#9E9E9E</color>
+    <color name="status_pending">#FFA000</color>
+    <color name="status_rejected">#F44336</color>
+    <color name="status_shipped">#9C27B0</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="grid_spacing">8dp</dimen>
+    <string name="app_name">BookApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <style name="Base.Theme.BookApp" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+    <style name="CustomSearchViewTheme" parent="ThemeOverlay.AppCompat.Light">
+
+        <item name="android:textColorPrimary">#222222</item>
+
+        <item name="android:textColorHint">#888888</item>
+
+        <item name="colorControlNormal">#555555</item>
+
+    </style>
+    <style name="Theme.BookApp" parent="Base.Theme.BookApp"/>
+</resources>
