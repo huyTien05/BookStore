@@ -100,7 +100,8 @@ public class CartActivity extends AppCompatActivity {
         // Đánh dấu tab "Giỏ hàng" nếu có trong menu
         MenuItem cartItem = bottomNav.getMenu().findItem(R.id.nav_cart);
         if (cartItem != null) {
-            cartItem.setChecked(true);
+//            cartItem.setChecked(true);
+            bottomNav.setSelectedItemId(R.id.nav_cart);
         } else {
             // Nếu là Admin (không có tab giỏ hàng), bỏ chọn tất cả để tránh nhầm lẫn
             bottomNav.getMenu().setGroupCheckable(0, true, false);
