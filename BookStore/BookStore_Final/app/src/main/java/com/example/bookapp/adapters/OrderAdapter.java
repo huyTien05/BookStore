@@ -22,17 +22,19 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     private Context context;
     private List<Order> orderList;
     private OnOrderActionListener listener;
+    private boolean isAdmin; // Thêm biến để phân biệt quyền
 
     public interface OnOrderActionListener {
         void onApprove(Order order);
         void onReject(Order order);
-        void onOrderClick(Order order); // Thêm interface cho click vào order
+        void onOrderClick(Order order);
     }
 
-    public OrderAdapter(Context context, List<Order> orderList, OnOrderActionListener listener) {
+    public OrderAdapter(Context context, List<Order> orderList, OnOrderActionListener listener, boolean isAdmin) {
         this.context = context;
         this.orderList = orderList;
         this.listener = listener;
+        this.isAdmin = isAdmin;
     }
 
     @NonNull
@@ -51,17 +53,18 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         holder.tvOrderDate.setText("Ngày đặt: " + order.getOrderDate());
         holder.tvTotalAmount.setText(String.format("%,d đ", (int) order.getTotalAmount()));
 
-        // Cập nhật chip status với màu sắc phù hợp
         updateStatusChip(holder.chipStatus, order.getStatus());
 
-        // Hiển thị/ẩn nút hành động dựa trên trạng thái
-        updateActionButtons(holder.llActionButtons, order.getStatus());
+        // Chỉ hiển thị nút hành động nếu là Admin và đơn hàng đang ở trạng thái Pending
+        if (isAdmin && "Pending".equals(order.getStatus())) {
+            holder.llActionButtons.setVisibility(View.VISIBLE);
+        } else {
+            holder.llActionButtons.setVisibility(View.GONE);
+        }
 
-        // Thiết lập listener cho nút
         holder.btnApprove.setOnClickListener(v -> listener.onApprove(order));
         holder.btnReject.setOnClickListener(v -> showRejectConfirmation(order));
 
-        // Thiết lập click listener cho toàn bộ card
         holder.itemView.setOnClickListener(v -> listener.onOrderClick(order));
     }
 
@@ -80,34 +83,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     private void updateStatusChip(Chip chip, String status) {
         chip.setText(status);
-
         switch (status) {
-            case "Pending":
-                chip.setChipBackgroundColorResource(R.color.status_pending);
-                break;
-            case "Accepted":
-                chip.setChipBackgroundColorResource(R.color.status_accepted);
-                break;
-            case "Rejected":
-                chip.setChipBackgroundColorResource(R.color.status_rejected);
-                break;
-            case "Completed":
-                chip.setChipBackgroundColorResource(R.color.status_completed);
-                break;
-            case "Shipped":
-                chip.setChipBackgroundColorResource(R.color.status_shipped);
-                break;
-            default:
-                chip.setChipBackgroundColorResource(R.color.status_default);
-                break;
-        }
-    }
-
-    private void updateActionButtons(LinearLayout actionButtons, String status) {
-        if ("Pending".equals(status)) {
-            actionButtons.setVisibility(View.VISIBLE);
-        } else {
-            actionButtons.setVisibility(View.GONE);
+            case "Pending": chip.setChipBackgroundColorResource(R.color.status_pending); break;
+            case "Accepted": chip.setChipBackgroundColorResource(R.color.status_accepted); break;
+            case "Rejected": chip.setChipBackgroundColorResource(R.color.status_rejected); break;
+            case "Completed": chip.setChipBackgroundColorResource(R.color.status_completed); break;
+            case "Shipped": chip.setChipBackgroundColorResource(R.color.status_shipped); break;
+            default: chip.setChipBackgroundColorResource(R.color.status_default); break;
         }
     }
 

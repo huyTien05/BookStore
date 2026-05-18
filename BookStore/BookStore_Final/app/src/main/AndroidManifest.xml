@@ -34,6 +34,7 @@
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.UsersManagementActivity" />
         <activity android:name=".activities.OrdersActivity" />
+        <activity android:name=".activities.UserOrdersActivity" />
         <activity android:name=".activities.CartActivity" />
     </application>
 

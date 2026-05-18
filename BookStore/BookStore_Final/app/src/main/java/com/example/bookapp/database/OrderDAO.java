@@ -38,12 +38,11 @@ public class OrderDAO {
         return revenue;
     }
 
-    // === MỚI: Lấy tất cả đơn hàng (kèm tên người dùng) ===
+    // Lấy tất cả đơn hàng (cho Admin)
     public List<Order> getAllOrders() {
         List<Order> orderList = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // Sử dụng JOIN để lấy tên người dùng từ bảng 'users'
         String query = "SELECT o.id, o.user_id, u.fullname, o.order_date, o.total_amount, o.status " +
                 "FROM orders o " +
                 "JOIN users u ON o.user_id = u.id " +
@@ -69,7 +68,36 @@ public class OrderDAO {
         return orderList;
     }
 
-    // === MỚI: Cập nhật trạng thái đơn hàng ===
+    // Lấy đơn hàng theo UserId (cho User)
+    public List<Order> getOrdersByUserId(int userId) {
+        List<Order> orderList = new ArrayList<>();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String query = "SELECT o.id, o.user_id, u.fullname, o.order_date, o.total_amount, o.status " +
+                "FROM orders o " +
+                "JOIN users u ON o.user_id = u.id " +
+                "WHERE o.user_id = ? " +
+                "ORDER BY o.order_date DESC";
+
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(userId)});
+
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+                String userName = cursor.getString(cursor.getColumnIndexOrThrow("fullname"));
+                String orderDate = cursor.getString(cursor.getColumnIndexOrThrow("order_date"));
+                double totalAmount = cursor.getDouble(cursor.getColumnIndexOrThrow("total_amount"));
+                String status = cursor.getString(cursor.getColumnIndexOrThrow("status"));
+
+                Order order = new Order(id, userId, userName, orderDate, totalAmount, status);
+                orderList.add(order);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return orderList;
+    }
+
     public boolean updateOrderStatus(int orderId, String newStatus) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -79,7 +107,7 @@ public class OrderDAO {
         db.close();
         return rowsAffected > 0;
     }
-    // Thêm vào OrderDAO.java
+
     public List<OrderItem> getOrderItems(int orderId) {
         List<OrderItem> orderItems = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();

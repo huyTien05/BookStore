@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,35 +22,32 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrdersActivity extends AppCompatActivity {
+public class UserOrdersActivity extends AppCompatActivity {
 
     private RecyclerView rvOrders;
     private OrderAdapter adapter;
     private List<Order> orderList = new ArrayList<>();
-    private List<Order> fullOrderList = new ArrayList<>();
     private OrderDAO orderDAO;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_user_orders);
 
-        // KIỂM TRA QUYỀN TRUY CẬP: Chỉ cho phép admin vào màn hình này
-        String role = getSharedPreferences("UserPrefs", MODE_PRIVATE).getString("ROLE", "user");
-        if (!"admin".equals(role)) {
-            // Nếu không phải admin, chuyển hướng ngay sang màn hình đơn hàng của User
-            startActivity(new Intent(this, UserOrdersActivity.class));
-            finish();
-            return;
-        }
-
-        setContentView(R.layout.activity_admin_orders);
-
+        userId = getSharedPreferences("UserPrefs", MODE_PRIVATE).getInt("USER_ID", -1);
         orderDAO = new OrderDAO(this);
+
         initViews();
         setupRecyclerView();
-        loadOrders();
-        setupSearch();
         setupNavigation();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Tải lại dữ liệu mỗi khi màn hình quay trở lại (từ Giỏ hàng hoặc Tài khoản)
+        loadOrders();
     }
 
     private void initViews() {
@@ -60,30 +56,28 @@ public class OrdersActivity extends AppCompatActivity {
 
     private void setupRecyclerView() {
         rvOrders.setLayoutManager(new LinearLayoutManager(this));
-        // isAdmin = true -> Hiện nút Duyệt/Từ chối cho Admin
+        // isAdmin = false -> Không hiện nút Duyệt/Từ chối
         adapter = new OrderAdapter(this, orderList, new OrderAdapter.OnOrderActionListener() {
             @Override
-            public void onApprove(Order order) {
-                updateOrderStatus(order, "Accepted");
-            }
-
+            public void onApprove(Order order) {} // Không dùng
             @Override
-            public void onReject(Order order) {
-                updateOrderStatus(order, "Rejected");
-            }
+            public void onReject(Order order) {}  // Không dùng
             @Override
             public void onOrderClick(Order order) {
                 showOrderDetailDialog(order);
             }
-        }, true);
+        }, false);
         rvOrders.setAdapter(adapter);
     }
 
     private void loadOrders() {
+        if (userId == -1) return;
+        
         orderList.clear();
-        fullOrderList.clear();
-        orderList.addAll(orderDAO.getAllOrders()); // Admin lấy tất cả đơn hàng
-        fullOrderList.addAll(orderList);
+        List<Order> latestOrders = orderDAO.getOrdersByUserId(userId);
+        if (latestOrders != null) {
+            orderList.addAll(latestOrders);
+        }
         adapter.notifyDataSetChanged();
     }
 
@@ -91,19 +85,20 @@ public class OrdersActivity extends AppCompatActivity {
         try {
             Order fullOrder = orderDAO.getOrderById(order.getId());
             List<OrderItem> orderItems = orderDAO.getOrderItems(order.getId());
+
             Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.dialog_order_detail);
 
             TextView tvOrderId = dialog.findViewById(R.id.tvOrderId);
-            TextView tvCustomerName = dialog.findViewById(R.id.tvCustomerName);
             TextView tvOrderDate = dialog.findViewById(R.id.tvOrderDate);
+            TextView tvOrderStatus = dialog.findViewById(R.id.tvOrderStatus);
             TextView tvTotalAmount = dialog.findViewById(R.id.tvTotalAmount);
             RecyclerView rvOrderItems = dialog.findViewById(R.id.rvOrderItems);
             Button btnClose = dialog.findViewById(R.id.btnClose);
 
             tvOrderId.setText("Mã đơn: #" + fullOrder.getId());
-            tvCustomerName.setText("Khách hàng: " + fullOrder.getUserName());
             tvOrderDate.setText("Ngày đặt: " + fullOrder.getOrderDate());
+            tvOrderStatus.setText("Trạng thái: " + fullOrder.getStatus());
             tvTotalAmount.setText(String.format("Tổng tiền: %,d đ", (int) fullOrder.getTotalAmount()));
 
             rvOrderItems.setLayoutManager(new LinearLayoutManager(this));
@@ -112,66 +107,32 @@ public class OrdersActivity extends AppCompatActivity {
             btnClose.setOnClickListener(v -> dialog.dismiss());
             dialog.show();
         } catch (Exception e) {
-            Toast.makeText(this, "Lỗi hiển thị chi tiết", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Lỗi xem chi tiết", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private void setupSearch() {
-        SearchView searchView = findViewById(R.id.searchView);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                filterOrders(query);
-                return false;
-            }
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                filterOrders(newText);
-                return false;
-            }
-        });
     }
 
     private void setupNavigation() {
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
-        bottomNav.getMenu().clear();
-        bottomNav.inflateMenu(R.menu.bottom_nav_admin_menu);
         bottomNav.setSelectedItemId(R.id.nav_orders);
         bottomNav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            if (itemId == R.id.nav_books) {
-                startActivity(new Intent(this, AdminActivity.class));
+            if (itemId == R.id.nav_home) {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
                 return true;
-            } else if (itemId == R.id.nav_users) {
-                startActivity(new Intent(this, UsersManagementActivity.class));
+            } else if (itemId == R.id.nav_cart) {
+                Intent intent = new Intent(this, CartActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
                 return true;
             } else if (itemId == R.id.nav_profile) {
-                startActivity(new Intent(this, ProfileActivity.class));
+                Intent intent = new Intent(this, ProfileActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
                 return true;
             }
             return false;
         });
-    }
-
-    private void filterOrders(String query) {
-        orderList.clear();
-        if (query.isEmpty()) {
-            orderList.addAll(fullOrderList);
-        } else {
-            for (Order order : fullOrderList) {
-                if (String.valueOf(order.getId()).contains(query) ||
-                        order.getUserName().toLowerCase().contains(query.toLowerCase())) {
-                    orderList.add(order);
-                }
-            }
-        }
-        adapter.notifyDataSetChanged();
-    }
-
-    private void updateOrderStatus(Order order, String newStatus) {
-        if (orderDAO.updateOrderStatus(order.getId(), newStatus)) {
-            Toast.makeText(this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
-            loadOrders();
-        }
     }
 }
