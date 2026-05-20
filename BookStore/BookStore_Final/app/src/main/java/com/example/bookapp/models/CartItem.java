@@ -1,6 +1,8 @@
 package com.example.bookapp.models;
 
-public class CartItem {
+import java.io.Serializable;
+
+public class CartItem implements Serializable {
     private int id;
     private int userId;
     private int bookId;
@@ -8,6 +10,7 @@ public class CartItem {
     private String bookTitle;
     private double bookPrice;
     private String bookImage;
+    private boolean isSelected;
 
     public CartItem(int id, int userId, int bookId, int quantity, String bookTitle, double bookPrice, String bookImage) {
         this.id = id;
@@ -17,6 +20,7 @@ public class CartItem {
         this.bookTitle = bookTitle;
         this.bookPrice = bookPrice;
         this.bookImage = bookImage;
+        this.isSelected = false;
     }
 
     // Getters and Setters
@@ -27,4 +31,6 @@ public class CartItem {
     public String getBookTitle() { return bookTitle; }
     public double getBookPrice() { return bookPrice; }
     public String getBookImage() { return bookImage; }
+    public boolean isSelected() { return isSelected; }
+    public void setSelected(boolean selected) { isSelected = selected; }
 }

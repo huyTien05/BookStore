@@ -36,6 +36,7 @@
         <activity android:name=".activities.OrdersActivity" />
         <activity android:name=".activities.UserOrdersActivity" />
         <activity android:name=".activities.CartActivity" />
+        <activity android:name=".activities.CheckoutActivity" />
     </application>
 
 </manifest>
