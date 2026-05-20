@@ -107,12 +107,10 @@ public class UsersManagementActivity extends AppCompatActivity {
                 finish();
                 return true;
             } else if (itemId == R.id.nav_profile) {
-//                Toast.makeText(this, "Tài khoản Admin", Toast.LENGTH_SHORT).show();
-//                return true;
                 Intent intent = new Intent(UsersManagementActivity.this, ProfileActivity.class);
-                // Truyền username nếu cần thiết
                 intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME"));
                 startActivity(intent);
+                finish();
                 return true;
             }
             return false;
