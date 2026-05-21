@@ -43,6 +43,26 @@ public class BookDAO {
         return books;
     }
 
+    public Book getBookById(int id) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.query("books", null, "id = ?", new String[]{String.valueOf(id)}, null, null, null);
+        Book book = null;
+        if (cursor != null && cursor.moveToFirst()) {
+            book = new Book(
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("title")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("author")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("category")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("description")),
+                    cursor.getDouble(cursor.getColumnIndexOrThrow("price")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("stock")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("image"))
+            );
+            cursor.close();
+        }
+        return book;
+    }
+
     // =================================================================
     // === PHƯƠNG THỨC MỚI CHO TÌM KIẾM - THÊM VÀO ĐÂY ===
     // =================================================================

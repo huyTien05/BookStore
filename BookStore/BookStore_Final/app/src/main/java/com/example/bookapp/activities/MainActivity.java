@@ -121,7 +121,10 @@ public class MainActivity extends AppCompatActivity {
         adapter = new BookAdapter(this, bookList, new BookAdapter.OnBookClickListener() {
             @Override
             public void onBookClick(Book book) {
-                showAiDialog(book);
+                // Chuyển sang màn hình chi tiết sách thay vì hiện AI Dialog
+                Intent intent = new Intent(MainActivity.this, BookDetailActivity.class);
+                intent.putExtra("BOOK_ID", book.getId());
+                startActivity(intent);
             }
 
             @Override
@@ -150,56 +153,5 @@ public class MainActivity extends AppCompatActivity {
         bookList.addAll(bookDAO.getAllBooks());
         fullBookList.addAll(bookList);
         adapter.notifyDataSetChanged();
-    }
-
-    private void showAiDialog(Book book) {
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.dialog_book_ai);
-        if (dialog.getWindow() != null) {
-            dialog.getWindow().setLayout(
-                android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-                android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-            );
-        }
-
-        TextView tvBookName  = dialog.findViewById(R.id.tvBookName);
-        View layoutLoading   = dialog.findViewById(R.id.layoutLoading);
-        View scrollResult    = dialog.findViewById(R.id.scrollResult);
-        TextView tvAiResult  = dialog.findViewById(R.id.tvAiResult);
-        TextView tvError     = dialog.findViewById(R.id.tvError);
-        View btnClose        = dialog.findViewById(R.id.btnClose);
-        View btnAddToCartAi  = dialog.findViewById(R.id.btnAddToCartAi);
-
-        tvBookName.setText("\"" + book.getTitle() + "\"");
-        btnClose.setOnClickListener(v -> dialog.dismiss());
-        btnAddToCartAi.setOnClickListener(v -> {
-            addToCart(book);
-            dialog.dismiss();
-        });
-
-        String prompt = "Bạn là trợ lý tư vấn sách. Hãy trả lời NGẮN GỌN bằng tiếng Việt (tối đa 120 từ) về cuốn sách sau:\n\n"
-                + "Tên: " + book.getTitle() + "\n"
-                + "Tác giả: " + book.getAuthor() + "\n"
-                + "Thể loại: " + book.getCategory() + "\n"
-                + "Mô tả: " + book.getDescription() + "\n"
-                + "Giá: " + String.format("%,.0f đ", book.getPrice()) + "\n\n"
-                + "Hãy cho biết: 1) Sách này phù hợp với ai? 2) Có nên mua không? Dùng emoji cho sinh động.";
-
-        AiHelper.ask(prompt, new AiHelper.Callback() {
-            @Override
-            public void onResult(String result) {
-                layoutLoading.setVisibility(View.GONE);
-                scrollResult.setVisibility(View.VISIBLE);
-                tvAiResult.setText(result);
-            }
-
-            @Override
-            public void onError(String errorMsg) {
-                layoutLoading.setVisibility(View.GONE);
-                tvError.setVisibility(View.VISIBLE);
-            }
-        });
-
-        dialog.show();
     }
 }

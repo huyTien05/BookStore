@@ -3,21 +3,26 @@ package com.example.bookapp.activities;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookapp.R;
-import com.example.bookapp.adapters.OrderAdapter;
 import com.example.bookapp.adapters.OrderItemAdapter;
+import com.example.bookapp.adapters.UserOrderAdapter;
+import com.example.bookapp.database.CartDAO;
 import com.example.bookapp.database.OrderDAO;
 import com.example.bookapp.models.Order;
 import com.example.bookapp.models.OrderItem;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +30,12 @@ import java.util.List;
 public class UserOrdersActivity extends AppCompatActivity {
 
     private RecyclerView rvOrders;
-    private OrderAdapter adapter;
-    private List<Order> orderList = new ArrayList<>();
+    private UserOrderAdapter adapter;
+    private List<Order> allOrders = new ArrayList<>();
+    private List<Order> displayedOrders = new ArrayList<>();
     private OrderDAO orderDAO;
     private int userId;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,45 +47,125 @@ public class UserOrdersActivity extends AppCompatActivity {
 
         initViews();
         setupRecyclerView();
+        setupTabLayout();
         setupNavigation();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Tải lại dữ liệu mỗi khi màn hình quay trở lại (từ Giỏ hàng hoặc Tài khoản)
         loadOrders();
     }
 
     private void initViews() {
         rvOrders = findViewById(R.id.rvOrders);
+        tabLayout = findViewById(R.id.tabLayout);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        toolbar.setNavigationOnClickListener(v -> finish());
     }
 
     private void setupRecyclerView() {
         rvOrders.setLayoutManager(new LinearLayoutManager(this));
-        // isAdmin = false -> Không hiện nút Duyệt/Từ chối
-        adapter = new OrderAdapter(this, orderList, new OrderAdapter.OnOrderActionListener() {
+        adapter = new UserOrderAdapter(this, displayedOrders, new UserOrderAdapter.OnOrderActionListener() {
             @Override
-            public void onApprove(Order order) {} // Không dùng
+            public void onCancelOrder(Order order) {
+                showCancelConfirmation(order);
+            }
+
             @Override
-            public void onReject(Order order) {}  // Không dùng
+            public void onReorder(Order order) {
+                performReorder(order);
+            }
+
             @Override
-            public void onOrderClick(Order order) {
+            public void onShowDetails(Order order) {
                 showOrderDetailDialog(order);
             }
-        }, false);
+        });
         rvOrders.setAdapter(adapter);
+    }
+
+    private void setupTabLayout() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                filterOrders(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
     }
 
     private void loadOrders() {
         if (userId == -1) return;
         
-        orderList.clear();
+        allOrders.clear();
         List<Order> latestOrders = orderDAO.getOrdersByUserId(userId);
         if (latestOrders != null) {
-            orderList.addAll(latestOrders);
+            allOrders.addAll(latestOrders);
+        }
+        filterOrders(tabLayout.getSelectedTabPosition());
+    }
+
+    private void filterOrders(int tabPosition) {
+        displayedOrders.clear();
+        String filterStatus = "";
+        switch (tabPosition) {
+            case 1: filterStatus = "Pending"; break;
+            case 2: filterStatus = "Accepted"; break;
+            case 3: filterStatus = "Shipped"; break;
+            case 4: filterStatus = "Completed"; break;
+            case 5: filterStatus = "Cancelled"; break;
+        }
+
+        if (tabPosition == 0) {
+            displayedOrders.addAll(allOrders);
+        } else {
+            for (Order order : allOrders) {
+                if (tabPosition == 5) {
+                    if ("Cancelled".equalsIgnoreCase(order.getStatus()) || "Rejected".equalsIgnoreCase(order.getStatus())) {
+                        displayedOrders.add(order);
+                    }
+                } else if (filterStatus.equalsIgnoreCase(order.getStatus())) {
+                    displayedOrders.add(order);
+                }
+            }
         }
         adapter.notifyDataSetChanged();
+    }
+
+    private void showCancelConfirmation(Order order) {
+        new AlertDialog.Builder(this)
+                .setTitle("Hủy đơn hàng")
+                .setMessage("Bạn có chắc chắn muốn hủy đơn hàng #" + order.getId() + "?")
+                .setPositiveButton("Hủy đơn", (dialog, which) -> {
+                    if (orderDAO.updateOrderStatus(order.getId(), "Cancelled")) {
+                        Toast.makeText(this, "Đã hủy đơn hàng", Toast.LENGTH_SHORT).show();
+                        loadOrders();
+                    }
+                })
+                .setNegativeButton("Quay lại", null)
+                .show();
+    }
+
+    private void performReorder(Order order) {
+        List<OrderItem> items = orderDAO.getOrderItems(order.getId());
+        CartDAO cartDAO = new CartDAO(this);
+        for (OrderItem item : items) {
+            cartDAO.addToCart(userId, item.getBookId(), item.getQuantity());
+        }
+        Toast.makeText(this, "Đã thêm các sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
     }
 
     private void showOrderDetailDialog(Order order) {
