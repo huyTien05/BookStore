@@ -68,11 +68,28 @@
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnClose"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Đóng" />
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnShareInvoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chia sẻ hóa đơn"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Đóng"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
 
 </LinearLayout>
