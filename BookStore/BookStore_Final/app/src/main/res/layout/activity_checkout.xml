@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#FF7A00"
+        android:background="#6200EE"
         app:title="Thanh toán"
         app:titleTextColor="#FFFFFF"
         app:navigationIcon="?attr/homeAsUpIndicator"
@@ -361,7 +361,7 @@
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 app:cornerRadius="8dp"
-                android:backgroundTint="#FF5722"
+                android:backgroundTint="#6200EE"
                 android:paddingHorizontal="32dp"
                 android:paddingVertical="12dp" />
         </LinearLayout>
