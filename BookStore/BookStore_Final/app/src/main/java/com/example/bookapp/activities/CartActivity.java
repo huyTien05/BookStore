@@ -18,6 +18,7 @@ import com.example.bookapp.adapters.CartAdapter;
 import com.example.bookapp.database.CartDAO;
 import com.example.bookapp.models.CartItem;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -51,6 +52,57 @@ public class CartActivity extends AppCompatActivity {
         initViews();
         setupRecyclerView();
         loadCartData();
+        setupBottomNavigation();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadCartData(); // Cập nhật lại giỏ hàng nếu có thay đổi từ trang khác
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
+        if (bottomNav != null) {
+            bottomNav.getMenu().findItem(R.id.nav_cart).setChecked(true);
+        }
+    }
+
+    private void setupBottomNavigation() {
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
+        if (bottomNav == null) return;
+        
+        // Nếu là Admin, đổi sang Menu của Admin
+        if ("admin".equals(userRole)) {
+            bottomNav.getMenu().clear();
+            bottomNav.inflateMenu(R.menu.bottom_nav_admin_menu);
+        }
+        
+        bottomNav.setSelectedItemId(R.id.nav_cart);
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_cart) {
+                return true;
+            } else if (id == R.id.nav_home || id == R.id.nav_books) {
+                Intent intent = new Intent(this, "admin".equals(userRole) ? AdminActivity.class : MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                return false;
+            } else if (id == R.id.nav_orders) {
+                Intent intent = new Intent(this, "admin".equals(userRole) ? OrdersActivity.class : UserOrdersActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                return false;
+            } else if (id == R.id.nav_users) {
+                Intent intent = new Intent(this, UsersManagementActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                return false;
+            } else if (id == R.id.nav_profile) {
+                Intent intent = new Intent(this, ProfileActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                return false;
+            }
+            return false;
+        });
     }
 
     private void initViews() {
