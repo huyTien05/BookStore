@@ -55,6 +55,10 @@ public class UserOrdersActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         loadOrders();
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
+        if (bottomNav != null) {
+            bottomNav.getMenu().findItem(R.id.nav_orders).setChecked(true);
+        }
     }
 
     private void initViews() {
@@ -239,21 +243,23 @@ public class UserOrdersActivity extends AppCompatActivity {
         bottomNav.setSelectedItemId(R.id.nav_orders);
         bottomNav.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            if (itemId == R.id.nav_home) {
+            if (itemId == R.id.nav_orders) {
+                return true;
+            } else if (itemId == R.id.nav_home) {
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
-                return true;
+                return false;
             } else if (itemId == R.id.nav_cart) {
                 Intent intent = new Intent(this, CartActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
-                return true;
+                return false;
             } else if (itemId == R.id.nav_profile) {
                 Intent intent = new Intent(this, ProfileActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
-                return true;
+                return false;
             }
             return false;
         });

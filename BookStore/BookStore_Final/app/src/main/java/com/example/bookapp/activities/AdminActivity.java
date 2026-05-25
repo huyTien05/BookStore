@@ -97,19 +97,28 @@ public class AdminActivity extends AppCompatActivity {
                 return true;
             } else if (itemId == R.id.nav_users) {
                 startActivity(new Intent(AdminActivity.this, UsersManagementActivity.class));
-                return true;
+                return false;
             } else if (itemId == R.id.nav_orders) {
                 // Điều hướng tới màn hình đơn hàng Admin
                 startActivity(new Intent(AdminActivity.this, OrdersActivity.class));
-                return true;
+                return false;
             } else if (itemId == R.id.nav_profile) {
                 Intent intent = new Intent(AdminActivity.this, ProfileActivity.class);
                 intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME"));
                 startActivity(intent);
-                return true;
+                return false;
             }
             return false;
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.getMenu().findItem(R.id.nav_books).setChecked(true);
+        }
     }
 
     private void loadStatistics() {

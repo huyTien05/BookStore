@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -97,24 +98,33 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, CartActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(intent);
-                    return true;
+                    return false;
                 } else if (itemId == R.id.nav_orders) {
                     // Chuyển hướng sang màn hình Đơn hàng của User
                     Intent intent = new Intent(MainActivity.this, UserOrdersActivity.class);
                     intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME"));
                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(intent);
-                    return true;
+                    return false;
                 } else if (itemId == R.id.nav_profile) {
                     Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
                     intent.putExtra("USERNAME", getIntent().getStringExtra("USERNAME"));
                     intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(intent);
-                    return true;
+                    return false;
                 }
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        if (bottomNavigationView != null) {
+            bottomNavigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
+        }
     }
 
     private void setupAdapter() {

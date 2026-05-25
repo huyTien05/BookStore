@@ -93,26 +93,35 @@ public class ProfileActivity extends AppCompatActivity {
                 intent.putExtra("USERNAME", currentUsername);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
-                return true;
+                return false;
             } else if (id == R.id.nav_users) {
                 Intent intent = new Intent(this, UsersManagementActivity.class);
                 intent.putExtra("USERNAME", currentUsername);
                 startActivity(intent);
-                return true;
+                return false;
             } else if (id == R.id.nav_cart) {
                 startActivity(new Intent(this, CartActivity.class));
-                return true;
+                return false;
             } else if (id == R.id.nav_orders) {
                 Intent intent = new Intent(this, OrdersActivity.class);
                 intent.putExtra("USERNAME", currentUsername);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
-                return true;
+                return false;
             } else if (id == R.id.nav_profile) {
                 return true;
             }
             return false;
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigation);
+        if (bottomNav != null) {
+            bottomNav.getMenu().findItem(R.id.nav_profile).setChecked(true);
+        }
     }
 
     // TẠO OPTION MENU (ba chấm)
