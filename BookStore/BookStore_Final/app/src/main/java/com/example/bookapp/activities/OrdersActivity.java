@@ -100,6 +100,7 @@ public class OrdersActivity extends AppCompatActivity {
             TextView tvTotalAmount = dialog.findViewById(R.id.tvTotalAmount);
             RecyclerView rvOrderItems = dialog.findViewById(R.id.rvOrderItems);
             Button btnClose = dialog.findViewById(R.id.btnClose);
+            Button btnShare = dialog.findViewById(R.id.btnShareInvoice);
 
             tvOrderId.setText("Mã đơn: #" + fullOrder.getId());
             tvCustomerName.setText("Khách hàng: " + fullOrder.getUserName());
@@ -109,11 +110,40 @@ public class OrdersActivity extends AppCompatActivity {
             rvOrderItems.setLayoutManager(new LinearLayoutManager(this));
             rvOrderItems.setAdapter(new OrderItemAdapter(this, orderItems));
 
+            btnShare.setOnClickListener(v -> shareInvoice(fullOrder, orderItems));
             btnClose.setOnClickListener(v -> dialog.dismiss());
             dialog.show();
         } catch (Exception e) {
             Toast.makeText(this, "Lỗi hiển thị chi tiết", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void shareInvoice(Order order, List<OrderItem> items) {
+        StringBuilder invoice = new StringBuilder();
+        invoice.append("--- HÓA ĐƠN BOOKSTORE ---\n");
+        invoice.append("Mã đơn hàng: #").append(order.getId()).append("\n");
+        invoice.append("Ngày đặt: ").append(order.getOrderDate()).append("\n");
+        invoice.append("Khách hàng: ").append(order.getUserName()).append("\n");
+        invoice.append("Địa chỉ: ").append(order.getUserAddress()).append("\n");
+        invoice.append("---------------------------\n");
+        invoice.append("Chi tiết sản phẩm:\n");
+
+        for (OrderItem item : items) {
+            invoice.append("- ").append(item.getBookTitle())
+                   .append(" (x").append(item.getQuantity()).append("): ")
+                   .append(String.format("%,d đ", (int) (item.getPrice() * item.getQuantity())))
+                   .append("\n");
+        }
+
+        invoice.append("---------------------------\n");
+        invoice.append("TỔNG CỘNG: ").append(String.format("%,d đ", (int) order.getTotalAmount())).append("\n");
+        invoice.append("Cảm ơn bạn đã mua sắm!");
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hóa đơn mua hàng #" + order.getId());
+        shareIntent.putExtra(Intent.EXTRA_TEXT, invoice.toString());
+        startActivity(Intent.createChooser(shareIntent, "Chia sẻ hóa đơn qua"));
     }
 
     private void setupSearch() {
