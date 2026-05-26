@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Thêm vào giỏ"
+            android:textColor="#2cb02f"
             android:textSize="12sp"
             app:icon="@android:drawable/ic_input_add"
             app:iconSize="16dp"

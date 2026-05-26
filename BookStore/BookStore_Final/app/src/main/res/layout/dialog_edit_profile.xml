@@ -20,7 +20,7 @@
             android:text="Chỉnh sửa thông tin"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/purple_7001"
+            android:textColor="#2cb02f"
             android:gravity="center"
             android:layout_marginBottom="16dp"/>
 
@@ -105,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lưu"
-                android:backgroundTint="@color/purple_5001"
+                android:backgroundTint="#2cb02f"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>

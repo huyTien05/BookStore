@@ -40,7 +40,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:chipBackgroundColor="#FFA000" />
+                app:chipBackgroundColor="#ee7321" />
 
         </LinearLayout>
 
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="150,000 đ"
-            android:textColor="#1976D2"
+            android:textColor="#d21c13"
             android:textSize="18sp"
             android:textStyle="bold" />
 

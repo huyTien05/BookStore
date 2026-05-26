@@ -58,24 +58,25 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Login Button -->
+
+    <!-- Guest Login Button - Sửa lại style -->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#2cb02f"
         android:text="ĐĂNG NHẬP"
         android:textColor="@color/white"
-        android:background="@color/black"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp" />
+        android:textStyle="bold" />
 
-    <!-- Guest Login Button - Sửa lại style -->
     <Button
         android:id="@+id/btnGuest"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="ĐĂNG NHẬP VỚI TƯ CÁCH KHÁCH"
         android:textColor="@color/white"
-        android:background="@drawable/button_border"
+        android:backgroundTint="#ee7321"
         android:textStyle="bold" />
 
     <!-- Register Link -->

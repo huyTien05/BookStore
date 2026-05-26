@@ -57,7 +57,8 @@
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lưu" />
+            android:text="Lưu"
+            android:backgroundTint="#2cb02f"/>
 
     </LinearLayout>
 </ScrollView>

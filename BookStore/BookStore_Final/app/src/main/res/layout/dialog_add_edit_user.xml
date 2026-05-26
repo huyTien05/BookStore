@@ -17,7 +17,7 @@
         <EditText android:id="@+id/etAddress" android:hint="Address" android:layout_width="match_parent" android:layout_height="wrap_content" />
         <EditText android:id="@+id/etRole" android:hint="Role (user/admin)" android:layout_width="match_parent" android:layout_height="wrap_content" />
 
-        <Button android:id="@+id/btnSave" android:text="Lưu" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <Button android:id="@+id/btnSave" android:text="Lưu" android:layout_width="match_parent" android:layout_height="wrap_content" android:backgroundTint="#2cb02f"/>
 
     </LinearLayout>
 </ScrollView>

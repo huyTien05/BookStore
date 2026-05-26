@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#6200EE"
+        android:background="#2cb02f"
         app:title="Thanh toán"
         app:titleTextColor="#FFFFFF"
         app:navigationIcon="?attr/homeAsUpIndicator"
@@ -347,7 +347,7 @@
                     android:text="0 đ"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#FF7A00"
+                    android:textColor="#d21c13"
                     android:layout_marginTop="4dp" />
             </LinearLayout>
 
@@ -361,7 +361,7 @@
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 app:cornerRadius="8dp"
-                android:backgroundTint="#6200EE"
+                android:backgroundTint="#ee7321"
                 android:paddingHorizontal="32dp"
                 android:paddingVertical="12dp" />
         </LinearLayout>

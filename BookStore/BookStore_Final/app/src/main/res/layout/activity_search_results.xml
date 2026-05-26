@@ -45,6 +45,7 @@
             app:icon="@drawable/ic_filter_list"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
+            android:textColor="#2cb02f"
             android:layout_height="wrap_content"/>
 
         <TextView
@@ -116,6 +117,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        app:itemIconTint="#d21c13"
+        app:itemTextColor="#d21c13"
         app:menu="@menu/bottom_nav_menu" />
 
 </LinearLayout>

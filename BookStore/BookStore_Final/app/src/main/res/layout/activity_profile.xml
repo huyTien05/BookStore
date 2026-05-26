@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple_500"
+        android:background="#2cb02f"
         app:title="Thông tin cá nhân"
         app:titleTextColor="@android:color/white"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
@@ -55,7 +55,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:src="@drawable/ic_profile"
-                            app:tint="@color/purple_500" />
+                            app:tint="#2cb02f" />
 
                         <TextView
                             android:id="@+id/tvUsername"
@@ -65,7 +65,7 @@
                             android:text="username"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/purple_700" />
+                            android:textColor="#2cb02f" />
                     </LinearLayout>
 
                     <!-- CÁC TRƯỜNG -->
@@ -75,8 +75,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         app:startIconDrawable="@android:drawable/ic_menu_edit"
-                        app:startIconTint="@color/purple_500"
-                        app:hintTextColor="@color/purple_700">
+                        app:startIconTint="#2cb02f"
+                        app:hintTextColor="#2cb02f">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tvFullname"
@@ -93,8 +93,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         app:startIconDrawable="@android:drawable/sym_action_email"
-                        app:startIconTint="@color/purple_500"
-                        app:hintTextColor="@color/purple_700">
+                        app:startIconTint="#2cb02f"
+                        app:hintTextColor="#2cb02f">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tvEmail"
@@ -111,8 +111,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         app:startIconDrawable="@android:drawable/stat_sys_phone_call"
-                        app:startIconTint="@color/purple_500"
-                        app:hintTextColor="@color/purple_700">
+                        app:startIconTint="#2cb02f"
+                        app:hintTextColor="#2cb02f">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tvPhone"
@@ -128,8 +128,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:startIconDrawable="@android:drawable/ic_menu_mylocation"
-                        app:startIconTint="@color/purple_500"
-                        app:hintTextColor="@color/purple_700">
+                        app:startIconTint="#2cb02f"
+                        app:hintTextColor="#2cb02f">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tvAddress"
@@ -150,7 +150,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        app:itemIconTint="@color/nav_item_color"
-        app:itemTextColor="@color/nav_item_color"
+        app:itemIconTint="#d21c13"
+        app:itemTextColor="#d21c13"
         app:menu="@menu/bottom_nav_menu" />
 </LinearLayout>

@@ -34,7 +34,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="Chờ xác nhận"
                 android:textStyle="bold"
-                android:textColor="#FF9800"
+                android:textColor="#ee7321"
                 android:textSize="14sp" />
         </RelativeLayout>
 
@@ -76,7 +76,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="530,000 đ"
                 android:textStyle="bold"
-                android:textColor="#6200EE"
+                android:textColor="#d21c13"
                 android:textSize="18sp" />
         </RelativeLayout>
 
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="Xem chi tiết"
                 android:textAllCaps="false"
-                android:backgroundTint="#6200EE"
+                android:backgroundTint="#2cb02f"
                 app:cornerRadius="24dp" />
         </LinearLayout>
 

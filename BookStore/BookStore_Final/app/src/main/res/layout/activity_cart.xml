@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#6200EE"
+        android:background="#2cb02f"
         app:title="Giỏ hàng"
         app:titleTextColor="#FFFFFF"
         app:navigationIcon="?attr/homeAsUpIndicator"
@@ -95,7 +95,7 @@
         android:id="@+id/layoutCheckout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardElevation="0dp"
+        app:cardElevation="2dp"
         app:cardCornerRadius="0dp"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +107,7 @@
             android:orientation="horizontal"
             android:padding="12dp"
             android:gravity="center_vertical"
-            android:background="#c2dbff">
+            android:background="#F3FFFD">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -144,7 +144,7 @@
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 app:cornerRadius="8dp"
-                android:backgroundTint="#6200EE"
+                android:backgroundTint="#ee7321"
                 android:paddingHorizontal="32dp"
                 android:paddingVertical="12dp" />
         </LinearLayout>
@@ -156,8 +156,8 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:backgroundTint="@color/white"
-        app:itemIconTint="@color/nav_item_color"
-        app:itemTextColor="@color/nav_item_color"
+        app:itemIconTint="#d21c13"
+        app:itemTextColor="#d21c13"
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

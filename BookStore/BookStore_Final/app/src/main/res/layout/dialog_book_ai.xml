@@ -34,7 +34,7 @@
                 android:text="BookBot AI"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="#5A52E0" />
+                android:textColor="#2cb02f" />
 
             <TextView
                 android:id="@+id/tvBookName"
@@ -66,7 +66,7 @@
         <ProgressBar
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:indeterminateTint="#6C63FF"
+            android:indeterminateTint="#2cb02f"
             android:layout_marginEnd="10dp" />
 
         <TextView
@@ -122,6 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Thêm vào giỏ"
+            android:textColor="#2cb02f"
             android:layout_marginEnd="8dp"
             app:cornerRadius="8dp" />
 
@@ -131,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Đóng"
-            android:backgroundTint="#6C63FF"
+            android:backgroundTint="#2cb02f"
             android:textColor="#FFFFFF"
             app:cornerRadius="8dp" />
     </LinearLayout>

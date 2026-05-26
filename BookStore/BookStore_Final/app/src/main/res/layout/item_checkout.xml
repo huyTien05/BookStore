@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="89,000 đ"
-        android:textColor="#FF7A00"
+        android:textColor="#d21c13"
         android:textStyle="bold" />
 
 </LinearLayout>

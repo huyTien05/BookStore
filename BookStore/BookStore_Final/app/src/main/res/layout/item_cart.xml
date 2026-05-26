@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="150.000 đ"
-                android:textColor="#FF7A00"
+                android:textColor="#d21c13"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
